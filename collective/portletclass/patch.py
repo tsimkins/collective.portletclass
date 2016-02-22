@@ -69,7 +69,9 @@ def filter_fields(self, k):
         # Check to see if we're in the above or below portlet manager
         try:
             manager = self.context.__parent__.__dict__['__manager__']
-            if 'ContentWellPortlets.BelowPortletManager' in manager or 'ContentWellPortlets.AbovePortletManager' in manager:
+            if 'ContentWellPortlets.BelowPortletManager' in manager or \
+               'ContentWellPortlets.AbovePortletManager' in manager or \
+               'ContentWellPortlets.InHeaderPortletManager' in manager:
                 return True
         except AttributeError, KeyError:
             pass
